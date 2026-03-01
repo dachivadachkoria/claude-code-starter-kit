@@ -121,7 +121,7 @@ chore: update dependencies
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/claude-code-starter-kit.git
+git clone https://github.com/dachivadachkoria/claude-code-starter-kit.git
 
 # Create a test project
 mkdir test-project

@@ -21,14 +21,12 @@
 
 ```bash
 # Clone this repo
-git clone https://github.com/YOUR_USERNAME/claude-code-starter-kit.git
+git clone https://github.com/dachivadachkoria/claude-code-starter-kit.git
 
 # Copy the .claude directory to your project
 cp -r claude-code-starter-kit/.claude your-project/
 cp claude-code-starter-kit/CLAUDE.md your-project/
 
-# Or use degit for a clean copy
-npx degit YOUR_USERNAME/claude-code-starter-kit/.claude your-project/.claude
 ```
 
 ### 2. Customize CLAUDE.md
