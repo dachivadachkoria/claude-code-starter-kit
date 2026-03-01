@@ -1,0 +1,116 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/settings.schema.json",
+  
+  "// INSTRUCTIONS": "Customize these settings for your project. Remove this comment line.",
+  
+  "model": "sonnet",
+  
+  "permissions": {
+    "// NOTE": "Start restrictive, expand as needed",
+    "allowedTools": [
+      "View",
+      "Edit",
+      "Write",
+      "Bash(npm test:*)",
+      "Bash(pytest:*)",
+      "Bash(go test:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)"
+    ],
+    "denyTools": [
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(curl|wget:* | bash)",
+      "Bash(chmod 777:*)"
+    ]
+  },
+
+  "hooks": {
+    "PostToolUse": [
+      {
+        "// PYTHON": "Run tests after editing Python files",
+        "matcher": "Write(*.py)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -m pytest tests/ -x -q --tb=line 2>/dev/null | head -20 || true"
+          }
+        ]
+      },
+      {
+        "// JAVASCRIPT": "Run tests after editing JS/TS files",
+        "matcher": "Write(*.{js,ts,jsx,tsx})",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm test --silent 2>/dev/null | head -20 || true"
+          }
+        ]
+      },
+      {
+        "// GO": "Run tests after editing Go files",
+        "matcher": "Write(*.go)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "go test ./... -short 2>/dev/null | head -20 || true"
+          }
+        ]
+      }
+    ]
+  },
+
+  "agents": {
+    "test-engineer": {
+      "description": "Specialized agent for test generation",
+      "model": "sonnet",
+      "file": ".claude/agents/test-engineer.md"
+    },
+    "security-auditor": {
+      "description": "Security vulnerability scanner",
+      "model": "sonnet",
+      "file": ".claude/agents/security-auditor.md"
+    },
+    "code-reviewer": {
+      "description": "Code review specialist",
+      "model": "sonnet",
+      "file": ".claude/agents/code-reviewer.md"
+    },
+    "bug-hunter": {
+      "description": "Bug detection and fixing",
+      "model": "sonnet",
+      "file": ".claude/agents/bug-hunter.md"
+    }
+  },
+
+  "context": {
+    "includePatterns": [
+      "**/*.py",
+      "**/*.go",
+      "**/*.js",
+      "**/*.ts",
+      "**/*.jsx",
+      "**/*.tsx",
+      "**/package.json",
+      "**/go.mod",
+      "**/requirements.txt",
+      "**/pyproject.toml",
+      "CLAUDE.md",
+      "README.md"
+    ],
+    "excludePatterns": [
+      "node_modules/**",
+      "venv/**",
+      ".venv/**",
+      "__pycache__/**",
+      "*.pyc",
+      ".git/**",
+      "dist/**",
+      "build/**",
+      "coverage/**",
+      "*.log"
+    ]
+  }
+}

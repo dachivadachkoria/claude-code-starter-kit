@@ -1,0 +1,68 @@
+# Claude Code Starter Kit .gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+vendor/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Test outputs
+coverage/
+htmlcov/
+.coverage
+*.cover
+.pytest_cache/
+.nyc_output/
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.local
+
+# Secrets (NEVER commit these)
+*.pem
+*.key
+*.crt
+secrets.*
+credentials.*
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Package locks (keep for actual projects)
+# package-lock.json
+# yarn.lock
+# Pipfile.lock
+# go.sum
+
+# Local configuration (if user-specific)
+.claude/settings.local.json
+GITHUB_SETUP.md
