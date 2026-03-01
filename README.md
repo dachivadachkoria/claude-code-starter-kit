@@ -214,7 +214,6 @@ Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidel
 
 - [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
 - [Anthropic API Docs](https://docs.anthropic.com)
-- [Community Discord](#) <!-- Add your discord -->
 
 ## 📄 License
 
