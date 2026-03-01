@@ -45,8 +45,8 @@ claude
 
 # Now use the commands:
 /test src/myfile.py           # Generate tests
-/security-scan                 # Check vulnerabilities
-/review                        # Code review
+/security-check                 # Check vulnerabilities
+/detailed-review                        # Code review
 /fix-bugs                      # Auto-fix common issues
 ```
 
@@ -58,8 +58,8 @@ claude
 ├── commands/                  # Slash commands
 │   ├── test.md               # /test - Generate unit tests
 │   ├── test-coverage.md      # /test-coverage - Coverage analysis
-│   ├── security-scan.md      # /security-scan - Vulnerability check
-│   ├── review.md             # /review - Code review
+│   ├── security-check.md      # /security-check - Vulnerability check
+│   ├── review.md             # /detailed-review - Code review
 │   ├── fix-bugs.md           # /fix-bugs - Auto-fix issues
 │   ├── docs.md               # /docs - Generate documentation
 │   └── refactor.md           # /refactor - Safe refactoring
@@ -92,16 +92,16 @@ CLAUDE.md                      # Project context (customize this!)
 
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/security-scan` | Full security audit | `/security-scan` |
-| `/security-scan --deps` | Check dependencies only | `/security-scan --deps` |
+| `/security-check` | Full security audit | `/security-check` |
+| `/security-check --deps` | Check dependencies only | `/security-check --deps` |
 | `/security-fix` | Auto-fix vulnerabilities | `/security-fix` |
 
 ### Code Quality Commands
 
 | Command | Description | Example |
 |---------|-------------|---------|
-| `/review` | Review staged changes | `/review` |
-| `/review <file>` | Review specific file | `/review src/api.py` |
+| `/detailed-review` | Review staged changes | `/detailed-review` |
+| `/detailed-review <file>` | Review specific file | `/detailed-review src/api.py` |
 | `/fix-bugs` | Detect and fix issues | `/fix-bugs` |
 | `/refactor <file>` | Safe refactoring | `/refactor src/legacy.py` |
 
@@ -111,6 +111,15 @@ CLAUDE.md                      # Project context (customize this!)
 |---------|-------------|---------|
 | `/docs` | Generate/update docs | `/docs` |
 | `/docs <file>` | Document specific file | `/docs src/utils.py` |
+
+## 💡 Built-in Commands
+
+Claude Code has excellent built-in commands you should know:
+
+- `/security-review` - AI-powered security scanning
+- `/review` - Code review
+- `/init` - Initialize project with CLAUDE.md
+- `/compact` - Compress context when running low
 
 ## 🛡️ Safety Guidelines
 

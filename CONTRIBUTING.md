@@ -145,7 +145,7 @@ claude
 
 ### Commands
 
-- Clear, action-oriented names: `/test`, `/review`, `/deploy`
+- Clear, action-oriented names: `/test`, `/deploy`
 - Include `$ARGUMENTS` handling
 - Document all options
 - Provide example output

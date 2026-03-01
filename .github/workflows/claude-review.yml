@@ -164,7 +164,7 @@ jobs:
           retention-days: 30
 
   # Optional: Security scan job
-  security-scan:
+  security-check:
     name: Security Scan
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false

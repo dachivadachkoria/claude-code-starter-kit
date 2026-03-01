@@ -1,9 +1,12 @@
 ---
-name: review
-description: "Perform AI-powered code review on changes or specific files"
+name: detailed-review
+description: "Structured code review with checklist and severity ratings"
 ---
 
-# Code Review
+# Detailed Code Review
+
+> 💡 For quick reviews, use Claude Code's built-in `/review`
+> This command provides a more structured, checklist-based review.
 
 Review code changes: $ARGUMENTS
 
@@ -145,8 +148,8 @@ if len(password) < MIN_PASSWORD_LENGTH:
 
 ## Options
 
-`/review` - Review staged changes
-`/review --branch` - Review entire branch
-`/review src/file.py` - Review specific file
-`/review #123` - Review PR (requires gh CLI)
-`/review --strict` - Stricter review criteria
+`/detailed-review` - Review staged changes
+`/detailed-review --branch` - Review entire branch
+`/detailed-review src/file.py` - Review specific file
+`/detailed-review #123` - Review PR (requires gh CLI)
+`/detailed-review --strict` - Stricter review criteria

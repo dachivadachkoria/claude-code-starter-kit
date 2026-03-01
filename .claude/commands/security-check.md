@@ -1,5 +1,5 @@
 ---
-name: security-scan
+name: security-check
 description: "Scan for security vulnerabilities in code and dependencies"
 ---
 
@@ -127,12 +127,12 @@ Dependencies: 5 vulnerable
 
 ## Options
 
-`/security-scan` - Full scan
-`/security-scan --deps` - Dependencies only
-`/security-scan --code` - Code patterns only
-`/security-scan --secrets` - Secret detection only
-`/security-scan src/api/` - Specific directory
-`/security-scan --fix` - Scan and auto-fix safe issues
+`/security-check` - Full scan
+`/security-check --deps` - Dependencies only
+`/security-check --code` - Code patterns only
+`/security-check --secrets` - Secret detection only
+`/security-check src/api/` - Specific directory
+`/security-check --fix` - Scan and auto-fix safe issues
 
 ## Safe Auto-Fixes
 
