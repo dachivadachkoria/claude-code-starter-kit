@@ -59,7 +59,7 @@ claude
 │   ├── test.md               # /test - Generate unit tests
 │   ├── test-coverage.md      # /test-coverage - Coverage analysis
 │   ├── security-check.md      # /security-check - Vulnerability check
-│   ├── review.md             # /detailed-review - Code review
+│   ├── detailed-review.md             # /detailed-review - Code review
 │   ├── fix-bugs.md           # /fix-bugs - Auto-fix issues
 │   ├── docs.md               # /docs - Generate documentation
 │   └── refactor.md           # /refactor - Safe refactoring
