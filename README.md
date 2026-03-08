@@ -4,6 +4,77 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-blue)](https://claude.ai/code)
+[![PyPI](https://img.shields.io/pypi/v/claude-code-starter-kit-mcp)](https://pypi.org/project/claude-code-starter-kit-mcp/)
+
+## 📦 MCP Server
+
+All commands and agents in this kit are also available as an **MCP (Model Context Protocol) server**, making them usable from Claude Desktop, Claude Code, or any MCP-compatible client.
+
+### Install
+
+```bash
+pip install claude-code-starter-kit-mcp
+```
+
+### Setup in Claude Code
+
+Add to your project's `.claude/settings.json` (or `~/.claude/settings.json` for global use):
+
+```json
+{
+  "mcpServers": {
+    "claude-code-starter-kit": {
+      "command": "claude-code-starter-kit-mcp"
+    }
+  }
+}
+```
+
+### Setup in Claude Desktop
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "claude-code-starter-kit": {
+      "command": "claude-code-starter-kit-mcp"
+    }
+  }
+}
+```
+
+### Available MCP Tools
+
+| Tool | Maps to |
+|------|---------|
+| `command_test` | `/test` |
+| `command_test_coverage` | `/test-coverage` |
+| `command_security_check` | `/security-check` |
+| `command_detailed_review` | `/detailed-review` |
+| `command_fix_bugs` | `/fix-bugs` |
+| `command_refactor` | `/refactor` |
+| `command_docs` | `/docs` |
+| `command_monitor` | `/monitor` |
+| `agent_test_engineer` | test-engineer agent |
+| `agent_security_auditor` | security-auditor agent |
+| `agent_code_reviewer` | code-reviewer agent |
+| `agent_bug_hunter` | bug-hunter agent |
+
+All tools accept an optional `arguments` string (e.g. a file path or flags like `--changed`).
+
+### PyPI Auto-publish
+
+Releases to PyPI are automated via GitHub Actions. Push a version tag to trigger a publish:
+
+```bash
+git tag v0.2.0
+git push origin v0.2.0
+```
+
+Requires a [PyPI Trusted Publisher](https://docs.pypi.org/trusted-publishers/) configured for the `pypi` environment in your repository settings.
+
+---
 
 ## 🎯 What This Kit Provides
 

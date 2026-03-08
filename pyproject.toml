@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claude-code-starter-kit-mcp"
+version = "0.1.0"
+description = "MCP server exposing Claude Code Starter Kit commands and agents as tools"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+]
+keywords = ["mcp", "claude", "anthropic", "ai", "developer-tools", "claude-code"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/dachivadachkoria/claude-code-starter-kit"
+Repository = "https://github.com/dachivadachkoria/claude-code-starter-kit"
+"Bug Tracker" = "https://github.com/dachivadachkoria/claude-code-starter-kit/issues"
+
+[project.scripts]
+claude-code-starter-kit-mcp = "mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+include = ["mcp_server.py"]
+
+[tool.hatch.build.targets.wheel.force-include]
+".claude/commands" = ".claude/commands"
+".claude/agents" = ".claude/agents"
